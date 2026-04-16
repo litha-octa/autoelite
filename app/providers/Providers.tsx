@@ -5,6 +5,7 @@ import { Provider } from "react-redux";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { makeStore, type AppStore } from "../store/store";
 import { hydrateCart } from "../store/cartSlice";
+import { hydrateWishlist } from "../store/wishlistSlice";
 
 function makeQueryClient() {
   return new QueryClient({
@@ -35,6 +36,7 @@ export default function Providers({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     storeRef.current?.dispatch(hydrateCart());
+    storeRef.current?.dispatch(hydrateWishlist());
   }, []);
 
   return (

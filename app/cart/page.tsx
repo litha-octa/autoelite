@@ -3,7 +3,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { FiTrash2, FiMinus, FiPlus, FiArrowLeft, FiShoppingBag } from "react-icons/fi";
+import {
+  FiTrash2,
+  FiMinus,
+  FiPlus,
+  FiArrowLeft,
+  FiShoppingBag,
+} from "react-icons/fi";
 import { useAppSelector, useAppDispatch } from "../store/hooks";
 import { removeFromCart, updateQuantity, clearCart } from "../store/cartSlice";
 
@@ -19,8 +25,8 @@ export default function CartPage() {
   if (items.length === 0) {
     return (
       <div className="max-w-3xl mx-auto px-4 sm:px-6 py-16 text-center">
-        <FiShoppingBag className="w-16 h-16 text-gray-300 mx-auto mb-4" />
-        <h2 className="text-xl font-bold text-gray-900 mb-2">
+        <FiShoppingBag className="w-16 h-16 text-[#1E3A5F] mx-auto mb-4" />
+        <h2 className="text-xl font-bold text-[#1E3A5F] mb-2">
           Your cart is empty
         </h2>
         <p className="text-gray-500 text-sm mb-6">
@@ -28,7 +34,7 @@ export default function CartPage() {
         </p>
         <Link
           href="/"
-          className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm px-6 py-3 rounded-lg transition-colors"
+          className="inline-flex items-center gap-2 bg-[#1E3A5F] hover:bg-blue-700 text-white font-semibold text-sm px-6 py-3 rounded-lg transition-colors"
         >
           <FiArrowLeft className="w-4 h-4" />
           Continue Shopping
